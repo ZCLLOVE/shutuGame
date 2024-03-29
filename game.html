@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Grid</title>
+    <style>
+        .grid-container {
+            margin-left: 100px;
+            width: 260px;
+            height: 260px;
+            border: 1px solid #000;
+            /* 定义容器边框 */
+            display: grid;
+            grid-gap: 0px;
+            background-image:url("/img/1.jpg") ;
+            background-size: contain; /* 等比例缩放图片，保持宽高比 */
+            background-repeat: no-repeat; /* 不重复图片 */
+            background-position: center; /* 图片居中显示 */
+            /* 定义宫格之间的间隔 */
+        }
+
+        .grid-head {
+            margin-left: 100px;
+            width: 260px;
+            height: 100px;
+            border: 1px solid #000;
+            /* 定义容器边框 */
+            display: flex;
+            grid-gap: 0px;
+            /* 定义宫格之间的间隔 */
+        }
+
+        .grid-head-item {
+            width: 100px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 允许文本自动换行 */
+            white-space: normal;
+            /* 防止文本溢出容器 */
+            overflow: hidden;
+        }
+
+        .grid-left-item {
+            width: 100px;
+            flex: 1;
+            border: 1px solid #000;
+            /* 定义宫格的边框 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            aspect-ratio: 1;
+        }
+
+        .grid-left {
+
+            height: 260px;
+            float: left;
+            border: 1px solid #000;
+            /* 定义容器边框 */
+            flex-direction: column; /* 修改这行 */
+            display: flex;
+            grid-gap: 0px;
+            /* 定义宫格之间的间隔 */
+        }
+
+        .grid-row {
+            display: flex;
+        }
+
+        .grid-item {
+            flex: 1;
+            border: 1px solid #000;
+            /* 定义宫格的边框 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1;
+            background-color: #eee;
+            /* 保持正方形 */
+        }
+
+        .becheck {
+            background-color: rgba(0, 0, 0, 0);
+            /* 定义宫格背景颜色 */
+        }
+    </style>
+    <script type="text/javascript" src="game.js">
+    </script>
+</head>
+
+<body>
+<div class="grid-head" id="gridHead" ></div>
+<div class="grid-left" id="gridLeft"></div>
+<div class="grid-container" id="gridContainer">
+</div>
+</body>
+<script>
+    var gridHead = document.getElementById('gridHead');
+    var gridLeft = document.getElementById('gridLeft');
+    var gridContainer = document.getElementById('gridContainer');
+    gameLoad(gridContainer, gridHead, gridLeft)
+</script>
+
+</html>
