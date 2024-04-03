@@ -5,7 +5,7 @@ function toggleClass(element) {
             element.classList.add('becheck');
         }
         if (checkGridItems()) {
-            alert("你真棒！")
+            alert("你真棒！！")
         }
 
 }
